@@ -1,8 +1,8 @@
-#Python Pizza worksheet
+# Python Pizza worksheet
 
 righto, how do i fit the quizz speech in here.
 
-##Task 1 - Why Python?
+## Task 1 - Why Python?
 
 * one of the top two languages in the world, javascript for the web 'front end', python for everything else (almost). 
   * it is used by NASA, Google, Gimp, Minecraft, and Microsoft Office. 
@@ -166,7 +166,7 @@ canvas.create_oval(65,65,435,435,fill="red")
 
 ***
 
-##Task 7 - Random toppings
+## Task 7 - Random toppings
 
 * look up what other toppings, we can have more shapes and colours
   * http://infohost.nmt.edu/tcc/help/pubs/tkinter/web/index.html
@@ -185,7 +185,7 @@ for x in range(15):
 
 ```
 
-##Task 8 - Good programming style
+## Task 8 - Good programming style
 
 * To program like a Pythonista
   * make variables instead of the magic numbers
