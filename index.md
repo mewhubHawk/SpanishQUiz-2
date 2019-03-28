@@ -40,7 +40,7 @@ It is useful to try all of them to find out which you prefer.
 
 ***
 
-##Task 2 - Batteries included
+## Task 2 - Batteries included
 
 **Everything in Python is an ```object```, with a uniform interface.**
 
@@ -100,7 +100,7 @@ What does ```"your name"[::-1]``` do?
 
 ***
 
-##Task 3 - A graphics app
+## Task 3 - A graphics app
 
 There are lots of graphics packages for Python, 
 * Tkinter is one of the oldest. 
@@ -162,7 +162,7 @@ Remember to test and save your work after every change!
 
 ***
 
-##Task 6 - Things to add to your Pizza
+## Task 6 - Things to add to your Pizza
 
 * Making the base
   * Note - the numbers give a bounding box for the oval
