@@ -1,6 +1,18 @@
-# Python Pizza worksheet
+# Python Text worksheet
 
 righto, how do i fit the quizz speech in here.
+
+probably best to 
+* give the debugging exercise for the if/else if ladder
+* number of lines of code, complexity & the human error rate
+* do not repeat yourself
+
+requirements:
+* dictionary & logic
+* external files & reading in the data
+* classes
+
+using repl.it
 
 ## Task 1 - Why Python?
 
