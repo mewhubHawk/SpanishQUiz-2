@@ -2,17 +2,19 @@
 
 righto, how do i fit the quizz speech in here.
 
-probably best to 
+probably best to put the 'problem' part as a link-out
 * give the debugging exercise for the if/else if ladder
 * number of lines of code, complexity & the human error rate
 * do not repeat yourself
 
-requirements:
-* dictionary & logic
+just make the 'solution' to satisfy the schools' requirements:
+* use repl.it (or idle for slow internet)
+* clean programming: dry, separation of concerns
+* data structure & algorithm
 * external files & reading in the data
 * classes
 
-using repl.it
+
 
 ## Task 1 - Why Python?
 
