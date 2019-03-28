@@ -34,23 +34,43 @@ You already know about ```classes``` and ```objects```, just not in a programmin
 
 You have spent all your school life writing and so have expectations about what words and sentences (called character strings in programming) can do.
 
-Let's play with your name:
+# 'greetings' is a variable
+greetings="hello katia"
 
-```
-name = "your name"
-```
+# 'x' is a loop counter
+# 'range' is a function to count to 3 or any other amount
+for x in range(3):
+   print(greetings)
 
-**```"your name"``` is a string that we have labelled ```name```**
+   # 'for' is a loop in python
+   # 'letter' is a variable holding each letter in greetings
+   for letter in greetings:
+     print(letter)
 
-As a string object, it comes with methods and attributes:
-```
-"your name".capitalize()
-```
+# 'input' is a function for getting a response from the user
+# 'response' is a variable for storing the value of the response
+# you could call it *anything*
+response = input(greetings)
+for x in range(4):
+   print(response)
 
-Gives the same result as 
-```
-name.capitalize()
-```
+# just to prove you can call it 'anything'
+anything1 = input("tell me anything 1")
+anything2 = input("tell me anything 2")
+anything3 = input("tell me anything 3")
+anything4 = input("tell me anything 4")
+anything5 = input("tell me anything 5")
+anything6 = input("tell me anything 6")
+anything7 = input("tell me anything 7")
+anything = input("tell me anything 8")
+
+print(anything1.capitalize())
+
+
+
+for x in range(20):
+  print(anything)
+
 
 You can also count letters:
 
