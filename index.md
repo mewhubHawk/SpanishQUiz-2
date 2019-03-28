@@ -8,43 +8,23 @@ probably best to put the 'problem' part as a link-out
 * do not repeat yourself
 
 just make the 'solution' to satisfy the schools' requirements:
-* use repl.it (or idle for slow internet)
+* use repl.it
+  * instructions for use?
+  * input, choice, output
 * clean programming: dry, separation of concerns
-* data structure & algorithm
-* external files & reading in the data
+  * data structure & algorithm
+  * external files & reading in the data
 * classes
 
 
 
 ## Task 1 - Why Python?
 
-* one of the top two languages in the world, javascript for the web 'front end', python for everything else (almost). 
-  * it is used by NASA, Google, Gimp, Minecraft, and Microsoft Office. 
-* my project has a million lines of Ada & C, and 3 million lines of Python to prove it!
+Python is fun and a lot of it just makes sense!
 
-**Python can be run from the command line, from an desktop IDE, or from an online IDE** 
+open ![repl.it](https://repl.it) in a new tab and start a new python project.
 
-It is useful to try all of them to find out which you prefer.
-
-**Start a command line prompt using ```cmd```**
-
-* You can find out the version of python by typing ```python --version```.
-  * 2.7.x means you have Python 2 installed
-  * 3.5.x means you have Python 3 installed
-
-**Type ```python``` to give the ```>>>``` prompt**
-
-* Python is now running!
-
-![Imgur](http://i.imgur.com/Pjii5Qo.png)
-
-***
-
-## Task 2 - Batteries included
-
-**Everything in Python is an ```object```, with a uniform interface.**
-
-Which means everything you make comes with functions built in, and anything you might like to try probably has a library to help.
+Everything in Python is an ```object```, with a uniform interface. Which means everything you make comes with functions built in, and anything you might like to try probably has a library to help.
 
 You already know about ```classes``` and ```objects```, just not in a programming sense: 
 * *you* are an instance of the class `boy` or of the class `girl`, 
@@ -52,7 +32,7 @@ You already know about ```classes``` and ```objects```, just not in a programmin
 * and *you* have attributes special to you - called ```overriding```.
   * an object is an instance of a class, where an class is some sort of abstraction of a category of things!
 
-**You have spent all your school life writing and so have expectations about what character strings can do.**
+You have spent all your school life writing and so have expectations about what words and sentences (called character strings in programming) can do.
 
 Let's play with your name:
 
@@ -78,8 +58,6 @@ You can also count letters:
 len("your name")
 ```
 
-![Imgur](http://i.imgur.com/NKvo0HG.png)
-
 Or talk about the n'th character:
 
 ```"your name"[3]```
@@ -95,12 +73,7 @@ Where:
 
 What does ```"your name"[::-1]``` do?
 
-
-**Things in Python have behaviour defined by Python, by the package it belongs to, and by programs that you write.**
-
-***
-
-## Task 3 - A graphics app
+## Task 2 - input, processing, and output
 
 There are lots of graphics packages for Python, 
 * Tkinter is one of the oldest. 
@@ -142,11 +115,9 @@ canvas.pack()
 window.mainloop()
 ```
 
-![Imgur](http://i.imgur.com/Zmr8WLb.png)
-
 ***
 
-##Task 4 - Running and saving your work
+## Task 3 - Running and saving your work
 
 Files and IDEs allow you to save your work, and let you run it at the press of a key.
 
@@ -206,19 +177,13 @@ for x in range(15):
 
 This is what my code looks like:
 
-![Imgur](http://i.imgur.com/H2i5eBA.png)
-
 
 I added another variable to count the number of hits on the pizza base, because it's a really cool way of calculating pi.
-
-(http://www.smac.lps.ens.fr/index.php/Program:Direct_pi)
 
 ***
 
 Remember to save your file and put it on a memory stick - we will be animating our pizza next week!
 
-
- 
 John Reeves
 
 * john@de-velopment.com
