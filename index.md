@@ -34,6 +34,7 @@ You already know about ```classes``` and ```objects```, just not in a programmin
 
 You have spent all your school life writing and so have expectations about what words and sentences (called character strings in programming) can do.
 
+```
 # 'greetings' is a variable
 greetings="hello katia"
 
@@ -66,11 +67,9 @@ anything = input("tell me anything 8")
 
 print(anything1.capitalize())
 
-
-
 for x in range(20):
   print(anything)
-
+```
 
 You can also count letters:
 
