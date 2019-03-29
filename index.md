@@ -111,15 +111,38 @@ Remember to test and save your work after every change!
   * the first time you will need to give a file name
   * save the file to a memory stick if you need to transport it
 
-***
 
-## Task 4 - Things to add to your Pizza
+
+## Task 4 - Questions & Answers
 
 * Making the base
   * Note - the numbers give a bounding box for the oval
 
 ```python
-canvas.create_oval(50,50,450,450,fill="brown")
+score=0
+
+questions=\
+  {
+  "England":"London",
+  "Spain":"Madrid",
+  "France":"Paris",
+  "Portugal":"Lisbon"
+  #add more questions
+}
+
+for question, answer in questions.items():
+  response = input("What is the capital of %s?\n--->" % question)
+  if response.capitalize() != answer:
+    print("No, the capital of %s is %s." % (question, answer))
+  else:
+    print("Yes, that's correct!")
+    score+=1
+
+numberofquestions = len(questions)
+percent = ( 100 * score / numberofquestions )
+print( "Out of %d questions!" % numberofquestions )
+print( "You got %d%% (out of %d questions)!" % (percent, numberofquestions) )
+
 ```
   
 * Putting tomato sauce on the base
@@ -129,9 +152,9 @@ canvas.create_oval(50,50,450,450,fill="brown")
 canvas.create_oval(65,65,435,435,fill="red")
 ```
 
-***
 
-## Task 5 - Random toppings
+
+## Task 5 - More Questions
 
 * look up what other toppings, we can have more shapes and colours
   * http://infohost.nmt.edu/tcc/help/pubs/tkinter/web/index.html
@@ -139,14 +162,29 @@ canvas.create_oval(65,65,435,435,fill="red")
 * we can also add them in random places, try this for pepperoni!
 
 ```python
-colours = ["red", "orange", "yellow", "green", "blue", "purple"]
+score=0
 
-# create some pepperoni - random 3 places
-for x in range(15):
-    rndX = randint(0,600)
-    rndY = randint(0,400)
-    rndCol = randint(0, (len(colours)-1))
-    canvas.create_oval(rndX,rndY,rndX+50,rndY+50,fill=colours[rndCol])
+questions=\
+  {
+  "England":"London",
+  "Spain":"Madrid",
+  "France":"Paris",
+  "Portugal":"Lisbon"
+  #add more questions
+}
+
+for question, answer in questions.items():
+  response = input("What is the capital of %s?\n--->" % question)
+  if response.capitalize() != answer:
+    print("No, the capital of %s is %s." % (question, answer))
+  else:
+    print("Yes, that's correct!")
+    score+=1
+
+numberofquestions = len(questions)
+percent = ( 100 * score / numberofquestions )
+print( "Out of %d questions!" % numberofquestions )
+print( "You got %d%% (out of %d questions)!" % (percent, numberofquestions) )
 
 ```
 
