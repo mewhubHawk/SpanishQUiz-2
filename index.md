@@ -32,6 +32,8 @@ You already know about ```classes``` and ```objects```, just not in a programmin
 * and *you* have attributes special to you - called ```overriding```.
   * an object is an instance of a class, where an class is some sort of abstraction of a category of things!
 
+## Task 2 - input, processing, and output
+
 You have spent all your school life writing and so have expectations about what words and sentences (called character strings in programming) can do.
 
 ```
@@ -92,49 +94,8 @@ Where:
 
 What does ```"your name"[::-1]``` do?
 
-## Task 2 - input, processing, and output
 
-There are lots of graphics packages for Python, 
-* Tkinter is one of the oldest. 
-* The name ```Tkinter``` is the Python interface to Tk, a cross-platform graphics toolkit, embedded in many applications, from engineering and design to office applications.
 
-* *This is a basic Tkinter template for making a graphics app:**
-  * import the libraries
-  * create the top level object
-  * attach a canvas
-  * draw things
-  * pack the canvas
-  * run the mainloop
-
-*Some of the steps may be hidden by the package, but it is useful to keep remembering the basic template*
-
-Here is some code to make a basic Python pizza:
-
-```python
-# import libraries
-from Tkinter import * 
-
-# create the top level Tk object
-window=Tk()
-window.title("a window")
-
-# create the canvas
-canvas = Canvas(window, height=600, width=600)
-
-# draw stuff on the canvas
-# first the pizza base
-canvas.create_oval(200,200,300,300,fill="brown")
-
-# draw some more stuff
-# this might be the tomato sauce toppings
-# now add your cheese and anything else, before we get to the pepperoni
-
-# pack the canvas and run the Tk mainloop
-canvas.pack()
-window.mainloop()
-```
-
-***
 
 ## Task 3 - Running and saving your work
 
@@ -152,7 +113,7 @@ Remember to test and save your work after every change!
 
 ***
 
-## Task 6 - Things to add to your Pizza
+## Task 4 - Things to add to your Pizza
 
 * Making the base
   * Note - the numbers give a bounding box for the oval
@@ -170,7 +131,7 @@ canvas.create_oval(65,65,435,435,fill="red")
 
 ***
 
-## Task 7 - Random toppings
+## Task 5 - Random toppings
 
 * look up what other toppings, we can have more shapes and colours
   * http://infohost.nmt.edu/tcc/help/pubs/tkinter/web/index.html
@@ -189,7 +150,7 @@ for x in range(15):
 
 ```
 
-## Task 8 - Good programming style
+## Task 6 - Good programming style
 
 * To program like a Pythonista
   * make variables instead of the magic numbers
