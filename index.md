@@ -3,9 +3,15 @@
 righto, how do i fit the quizz speech in here.
 
 probably best to put the 'problem' part as a link-out
+* making a quizz with if/then & input
 * give the debugging exercise for the if/else if ladder
+* wait: there's gotta be a better way
 * number of lines of code, complexity & the human error rate
-* do not repeat yourself
+* put all the questions in one place
+* just if/then & input once
+* put the questions in a separate file
+* choice which quizz to run
+
 
 just make the 'solution' to satisfy the schools' requirements:
 * use repl.it
