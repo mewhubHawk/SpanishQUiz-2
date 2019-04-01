@@ -2,21 +2,39 @@
 
 righto, how do i fit the quizz speech in here.
 
-probably best to put the 'problem' part as a link-out
-* making a quizz with if/then & input
-* give the debugging exercise for the if/else if ladder
-* wait: there's gotta be a better way
-* number of lines of code, complexity & the human error rate
-* put all the questions in one place
-* just if/then & input once
-* put the questions in a separate file
-* choice which quizz to run
-
+possibly best to put the 'problem' part as a link-out?
 
 just make the 'solution' to satisfy the schools' requirements:
+
+task 1
 * use repl.it
   * instructions for use?
   * input, choice, output
+* eg what is you name
+  * say hello
+  
+task 2
+* making a quizz with if/then & input
+* making the quizz with an if/else if ladder
+  * debugging exercise
+
+task 3
+* wait: there's gotta be a better way
+  * explain why debugging is hard
+* number of lines of code, complexity & the human error rate
+
+task 4
+* put all the questions in one place
+* just if/then & input once
+* now each question adds 1 line to the dictionary
+
+task 5
+* put the questions in a separate file
+  * schools ask for it / useful skill
+* choice which quizz to run
+
+task 6
+you have learnt a lot
 * clean programming: dry, separation of concerns
   * data structure & algorithm
   * external files & reading in the data
