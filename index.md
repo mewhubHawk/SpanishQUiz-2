@@ -61,9 +61,7 @@ Press the buttons in the top bar regularly:
 
 Python is fun and a lot of it just makes sense!
 
-open ![repl.it](https://repl.it) in a new tab and start a new python project.
-
-Everything in Python is an ```object```, with a uniform interface. Which means everything you make comes with functions built in, and anything you might like to try probably has a library to help.
+Everything in Python is an ```object```, with a uniform interface. Which means everything you make comes with functions built in, and anything you might like to try probably has a library to help. Hmmm, what does that sentence mean???
 
 You already know about ```classes``` and ```objects```, just not in a programming sense: 
 * *you* are an instance of the class `boy` or of the class `girl`, 
