@@ -41,6 +41,21 @@ you have learnt a lot
 * classes
 
 
+# 1 INTRODUCTION
+
+## We're going to be using a website called www.repl.it to have fun with Python.
+
+* Open repl.it open in a new tab) [repl.it/languages/Python](http://repl.it/languages/Python)
+
+Press the buttons in the top bar regularly:
+
+* Run - when you want to test your code
+
+* Save - when you think it works and you wanna share
+
+
+![Imgur](http://i.imgur.com/l3EsgJk.png)
+
 
 ## Task 1 - Why Python?
 
