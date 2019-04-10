@@ -47,29 +47,23 @@ you have learnt a lot
 
 * Open repl.it open in a new tab) [repl.it/languages/Python](http://repl.it/languages/Python)
 
-Press the buttons in the top bar regularly:
-
-* Run - when you want to test your code
-
-* Save - when you think it works and you wanna share
-
-// change to python image
 ![Imgur](http://i.imgur.com/l3EsgJk.png)
 
+Remember to test and save your work after every change by pressing the buttons in the top bar regularly:
 
-## Task 1 - Why Python?
+* click *run* at the top left - did you get what you expected?
+  * press this every time you want to see what your code does 
+  * this should then appear in modal form labelled 'Tk'
+
+* click *save* at the top left - no URL this time :/
+  * the first time you will need to give a file name
+  * save the file to a memory stick if you need to transport it
+
+# 2 INPUT, PROCESSING AND OUTPUT
 
 Python is fun and a lot of it just makes sense!
 
 Everything in Python is an ```object```, with a uniform interface. Which means everything you make comes with functions built in, and anything you might like to try probably has a library to help. Hmmm, what does that sentence mean???
-
-You already know about ```classes``` and ```objects```, just not in a programming sense: 
-* *you* are an instance of the class `boy` or of the class `girl`, 
-* *you* come with a bunch of attributes that you can do just like every other boy or girl, 
-* and *you* have attributes special to you - called ```overriding```.
-  * an object is an instance of a class, where an class is some sort of abstraction of a category of things!
-
-## Task 2 - input, processing, and output
 
 You have spent all your school life writing and so have expectations about what words and sentences (called character strings in programming) can do.
 
@@ -131,26 +125,7 @@ Where:
 
 What does ```"your name"[::-1]``` do?
 
-
-
-
-## Task 3 - Running and saving your work
-
-Files and IDEs allow you to save your work, and let you run it at the press of a key.
-
-Remember to test and save your work after every change!
-
-* click *run* at the top left - did you get what you expected?
-  * press this every time you want to see what your code does 
-  * this should then appear in modal form labelled 'Tk'
-
-* click *save* at the top left - no URL this time :/
-  * the first time you will need to give a file name
-  * save the file to a memory stick if you need to transport it
-
-
-
-## Task 4 - Questions & Answers
+# 4 QUESTIONS AND ANSWERS IN PYTHON
 
 * Making the base
   * Note - the numbers give a bounding box for the oval
@@ -188,8 +163,6 @@ print( "You got %d%% (out of %d questions)!" % (percent, numberofquestions) )
 ```python
 canvas.create_oval(65,65,435,435,fill="red")
 ```
-
-
 
 ## Task 5 - More Questions
 
@@ -236,6 +209,10 @@ This is what my code looks like:
 I added another variable to count the number of hits on the pizza base, because it's a really cool way of calculating pi.
 
 ***
+
+# 3 RUNNING AND SAVING YOUR WORK IN REPL.IT
+
+Files and IDEs allow you to save your work, and let you run it at the press of a key.
 
 Remember to save your file and put it on a memory stick - we will be animating our pizza next week!
 
