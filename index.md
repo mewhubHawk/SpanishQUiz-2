@@ -40,12 +40,12 @@ you have learnt a lot
   * external files & reading in the data
 * classes
 
+***
+# 1 Introduction
 
-# 1 INTRODUCTION
+We're going to be using a website called www.repl.it to have fun with Python.
 
-## We're going to be using a website called www.repl.it to have fun with Python.
-
-* Open repl.it open in a new tab) [repl.it/languages/Python](http://repl.it/languages/Python)
+* Open repl.it in a new tab [repl.it/languages/Python](http://repl.it/languages/Python)
 
 ![Imgur](http://i.imgur.com/l3EsgJk.png)
 
@@ -59,21 +59,23 @@ Remember to test and save your work after every change by pressing the buttons i
   * the first time you will need to give a file name
   * save the file to a memory stick if you need to transport it
 
-# 2 INPUT, PROCESSING AND OUTPUT
+***
+# 2 Playing with Strings
 
 Python is fun and a lot of it just makes sense!
 
-Everything in Python is an ```object```, with a uniform interface. Which means everything you make comes with functions built in, and anything you might like to try probably has a library to help. Hmmm, what does that sentence mean???
+You have spent all your school life writing and so have expectations about what words and sentences (called character strings in programming) can do. 
 
-You have spent all your school life writing and so have expectations about what words and sentences (called character strings in programming) can do.
+Copy these into repl.it and see what happens.
 
 ```
 # 'greetings' is a variable
 greetings="hello katia"
+
+print(greetings)
 ```
 
-
-
+'for' is a way of repeating things in Python.
 
 ```
 # 'x' is a loop counter
@@ -82,8 +84,13 @@ for x in range(3):
    print(greetings)
 ```
 
+```
+# 'letter' is a variable holding each letter in greetings
+for letter in greetings:
+     print(letter)
+```
 
-You can also count letters:
+You can also count letters.
 
 ```
 len("your name")
@@ -104,22 +111,20 @@ Where:
 
 What does ```"your name"[::-1]``` do?
 
+***
+# 3 Input
+
+'input' is a function for getting a response from the user.
 
 ```
-# 'for' is a loop in python
-# 'letter' is a variable holding each letter in greetings
-for letter in greetings:
-     print(letter)
-```
-
-```
-# 'input' is a function for getting a response from the user
 # 'response' is a variable for storing the value of the response
 # you could call it *anything*
 response = input(greetings)
 for x in range(4):
    print(response)
 ```
+
+You can use 'input' as often as you like.
 
 ```
 # just to prove you can call it 'anything'
@@ -133,7 +138,6 @@ anything7 = input("tell me anything 7")
 anything = input("tell me anything 8")
 ```
 
-
 ```
 print(anything1.capitalize())
 
@@ -141,10 +145,43 @@ for x in range(20):
   print(anything)
 ```
 
-# 4 QUESTIONS AND ANSWERS IN PYTHON
+***
+# 4 Question and Answers
 
-* Making the base
-  * Note - the numbers give a bounding box for the oval
+
+```python
+score=0
+
+questions=\
+  {
+  "England":"London",
+  "Spain":"Madrid",
+  "France":"Paris",
+  "Portugal":"Lisbon"
+  #add more questions
+}
+'''
+
+'''
+for question, answer in questions.items():
+  response = input("What is the capital of %s?\n--->" % question)
+  if response.capitalize() != answer:
+    print("No, the capital of %s is %s." % (question, answer))
+  else:
+    print("Yes, that's correct!")
+    score+=1
+'''
+'''
+numberofquestions = len(questions)
+percent = ( 100 * score / numberofquestions )
+print( "Out of %d questions!" % numberofquestions )
+print( "You got %d%% (out of %d questions)!" % (percent, numberofquestions) )
+
+```
+
+***
+# 5 More Questions
+
 
 ```python
 score=0
@@ -172,49 +209,9 @@ print( "Out of %d questions!" % numberofquestions )
 print( "You got %d%% (out of %d questions)!" % (percent, numberofquestions) )
 
 ```
-  
-* Putting tomato sauce on the base
-  * Note - there is no opacity in a tk canvas, so the layers are important
 
-```python
-canvas.create_oval(65,65,435,435,fill="red")
-```
-
-## Task 5 - More Questions
-
-* look up what other toppings, we can have more shapes and colours
-  * http://infohost.nmt.edu/tcc/help/pubs/tkinter/web/index.html
-
-* we can also add them in random places, try this for pepperoni!
-
-```python
-score=0
-
-questions=\
-  {
-  "England":"London",
-  "Spain":"Madrid",
-  "France":"Paris",
-  "Portugal":"Lisbon"
-  #add more questions
-}
-
-for question, answer in questions.items():
-  response = input("What is the capital of %s?\n--->" % question)
-  if response.capitalize() != answer:
-    print("No, the capital of %s is %s." % (question, answer))
-  else:
-    print("Yes, that's correct!")
-    score+=1
-
-numberofquestions = len(questions)
-percent = ( 100 * score / numberofquestions )
-print( "Out of %d questions!" % numberofquestions )
-print( "You got %d%% (out of %d questions)!" % (percent, numberofquestions) )
-
-```
-
-## Task 6 - Good programming style
+***
+# 6 Good programming style
 
 * To program like a Pythonista
   * make variables instead of the magic numbers
@@ -225,12 +222,9 @@ This is what my code looks like:
 I added another variable to count the number of hits on the pizza base, because it's a really cool way of calculating pi.
 
 ***
-
-# 3 RUNNING AND SAVING YOUR WORK IN REPL.IT
+# 7 Remember to run and save your work
 
 Files and IDEs allow you to save your work, and let you run it at the press of a key.
-
-Remember to save your file and put it on a memory stick - we will be animating our pizza next week!
 
 John Reeves
 
