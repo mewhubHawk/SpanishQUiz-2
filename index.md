@@ -196,6 +196,9 @@ questions=\
   #add more questions
 }
 
+```
+
+```
 for question, answer in questions.items():
   response = input("What is the capital of %s?\n--->" % question)
   if response.capitalize() != answer:
@@ -203,7 +206,9 @@ for question, answer in questions.items():
   else:
     print("Yes, that's correct!")
     score+=1
+```
 
+```
 numberofquestions = len(questions)
 percent = ( 100 * score / numberofquestions )
 print( "Out of %d questions!" % numberofquestions )
