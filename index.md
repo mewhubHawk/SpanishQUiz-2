@@ -6,39 +6,52 @@ possibly best to put the 'problem' part as a link-out?
 
 just make the 'solution' to satisfy the schools' requirements:
 
-task 1
+task 1 - introduction & opening python editor
 * use repl.it
   * instructions for use?
   * input, choice, output
 * eg what is you name
   * say hello
   
-task 2
+task 2 - the school's example
 * making a quizz with if/then & input
 * making the quizz with an if/else if ladder
   * debugging exercise
 
-task 3
+task 3 - hard work
 * wait: there's gotta be a better way
-  * explain why debugging is hard
+  * explain why debugging is hard;
+  * n! complexity & n * 10 lines of code
 * number of lines of code, complexity & the human error rate
+  * 3 bugs per line of code
+  * between 1 in 1 & 1 in 10
+  * practice, practice, practice & use of tools
 
-task 4
-* put all the questions in one place
-* just if/then & input once
+task 4 - the lazy way
+* would it be possible to:
+  * put all the questions in one place
+  * just one if/then & one input
 * now each question adds 1 line to the dictionary
+* that sounds ideal to me
 
-task 5
+task 5 - expand the idea again
 * put the questions in a separate file
   * schools ask for it / useful skill
 * choice which quizz to run
 
 task 6
 you have learnt a lot
+1. technically, you have learned:
 * clean programming: dry, separation of concerns
   * data structure & algorithm
   * external files & reading in the data
 * classes
+2. creatively, you have learned:
+* work through a small example
+* take things in small steps
+* test, test, test
+* think, think, think
+* see if you can simplify
 
 ***
 # 1 Introduction
