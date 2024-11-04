@@ -2,6 +2,7 @@
 
 let currentQuizData = {};
 let currentQuestionIndex = 0;
+let highScore = 0;
 let score = 0;
 
 // Fetch available quizzes on page load
@@ -34,6 +35,14 @@ async function startQuiz() {
     }
 }
 
+// Function to fetch the high score for the selected quiz
+async function fetchHighScore(quizName) {
+    const response = await fetch(`/get_high_score/${quizName}`);
+    const data = await response.json();
+    highScore = data.high_score;
+    document.getElementById("score").innerText = `High Score: ${highScore}`;
+}
+
 // Function to display the current question
 function displayQuestion() {
     const questions = Object.keys(currentQuizData);
@@ -58,4 +67,23 @@ function submitAnswer() {
 
     currentQuestionIndex += 1;
     displayQuestion();
+}
+
+// Function to update the high score if the current score is higher
+async function updateHighScore() {
+    const quizName = document.getElementById("quiz-selector").value;
+    if (score > highScore) {
+        const response = await fetch(`/update_high_score/${quizName}`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ score: score })
+        });
+        const data = await response.json();
+        document.getElementById("score").innerText = `High Score: ${data.high_score}`;
+        alert(data.message);
+    } else {
+        alert(`Final Score: ${score}. Try again to beat the high score of ${highScore}!`);
+    }
 }
