@@ -19,18 +19,18 @@
     <div class="quiz-container">
         <h2>Quiz Selector</h2>
         <select id="quiz-selector">
-            <option value="" disabled selected>Select a quiz</option>
+            <option value=" " >Select a quiz</option>
         </select>
-        <button onclick="startQuiz()">Start Quiz</button>
-    
-        <h2>Quiz</h2>     
+        <button onclick="startQuiz()" class="start-btn">Start Quiz</button>
+
         <div id="quiz-content" style="display: none;">
+            <h2>Quiz</h2>   
             <div id="question-container"></div>
-            <input type="text" id="answer" placeholder="Your answer">
-            <button onclick="submitAnswer()">Submit Answer</button>
+            <input type="text" id="answer" class="answer-input" placeholder="Type your answer">
+            <button onclick="submitAnswer()" class="submit-btn">Submit Answer</button>
             <div id="feedback"></div>
         </div>
-    
+
         <div id="score"></div>
     </div>
 </body>
