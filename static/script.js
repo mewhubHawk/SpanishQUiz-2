@@ -7,8 +7,8 @@ let highScore = 0;
 window.onload = async function() {
     const response = await fetch("/get_quizzes");
     const quizzes = await response.json();
-
     const quizSelector = document.getElementById("quiz-selector");
+    
     quizzes.forEach(quiz => {
         let option = document.createElement("option");
         option.value = quiz;
@@ -33,7 +33,7 @@ async function startQuiz() {
         displayQuestion();
         fetchHighScore(quizName);
     }
-}
+};
 
 // Function to fetch the high score for the selected quiz
 async function fetchHighScore(quizName) {
@@ -41,7 +41,7 @@ async function fetchHighScore(quizName) {
     const data = await response.json();
     highScore = data.high_score;
     document.getElementById("score").innerText = `High Score: ${highScore}`;
-}
+};
 
 // Function to display the current question
 function displayQuestion() {
@@ -55,7 +55,7 @@ function displayQuestion() {
         document.getElementById("question-container").innerText = `Your final score is ${score}/${questions.length}`;
         updateHighScore();
     }
-}
+};
 
 // Function to submit an answer
 function submitAnswer() {
@@ -71,6 +71,7 @@ function submitAnswer() {
     }
     currentQuestionIndex += 1;
     displayQuestion();
+};
 
 // Function to update the high score if the current score is higher
 async function updateHighScore() {
@@ -90,4 +91,4 @@ async function updateHighScore() {
     } else {
         alert(`Final Score: ${score}. Try again to beat the high score of ${highScore}!`);
     }
-}
+};
