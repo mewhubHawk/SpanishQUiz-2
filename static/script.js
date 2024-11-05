@@ -1,9 +1,7 @@
-// JavaScript for quiz selection and interactivity
-
 let currentQuizData = {};
 let currentQuestionIndex = 0;
-let highScore = 0;
 let score = 0;
+let highScore = 0;
 
 // Fetch available quizzes on page load
 window.onload = async function() {
@@ -31,7 +29,9 @@ async function startQuiz() {
         currentQuestionIndex = 0;
         score = 0;
         document.getElementById("quiz-content").style.display = "block";
+        document.getElementById("feedback").innerText = "";
         displayQuestion();
+        fetchHighScore(quizName);
     }
 }
 
@@ -46,12 +46,14 @@ async function fetchHighScore(quizName) {
 // Function to display the current question
 function displayQuestion() {
     const questions = Object.keys(currentQuizData);
+
     if (currentQuestionIndex < questions.length) {
         document.getElementById("question-container").innerText = questions[currentQuestionIndex];
-        document.getElementById("answer").value = ""; // Clear answer input
+        document.getElementById("answer").value = "";
+        document.getElementById("feedback").innerText = "";
     } else {
-        // Display final score
         document.getElementById("question-container").innerText = `Your final score is ${score}/${questions.length}`;
+        updateHighScore();
     }
 }
 
@@ -63,15 +65,17 @@ function submitAnswer() {
 
     if (answer.toLowerCase() === correctAnswer.toLowerCase()) {
         score += 1;
+        document.getElementById("feedback").innerText = "Correct!";
+    } else {
+        document.getElementById("feedback").innerText = `Incorrect. The correct answer is: ${correctAnswer}`;
     }
-
     currentQuestionIndex += 1;
     displayQuestion();
-}
 
 // Function to update the high score if the current score is higher
 async function updateHighScore() {
     const quizName = document.getElementById("quiz-selector").value;
+
     if (score > highScore) {
         const response = await fetch(`/update_high_score/${quizName}`, {
             method: "POST",
