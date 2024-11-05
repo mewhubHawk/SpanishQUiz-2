@@ -52,9 +52,14 @@ def get_high_score(quiz_name):
 @app.route("/update_high_score/<quiz_name>", methods=["POST"])
 def update_high_score(quiz_name):
     """Update the high score if the new score is higher."""
-    new_score = request.json.get("score", 0)
+    # Ensure request.json is not None before accessing `.get("score")`
+    if request.json is None:
+        return jsonify({"error": "No JSON data received"}), 400
+
+    new_score = request.json.get("score", 0)  # Default to 0 if no score is provided
     high_scores = load_high_scores()
 
+    # Update the high score only if the new score is greater
     if new_score > high_scores.get(quiz_name, 0):
         high_scores[quiz_name] = new_score
         save_high_scores(high_scores)
