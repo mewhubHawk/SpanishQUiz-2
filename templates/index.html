@@ -16,20 +16,22 @@
     <script src="{{ url_for('static', filename='script.js') }}" defer></script>
 </head>
 <body>
-
-<div class="quiz-container">
-    <h2>Quiz Selector</h2>
-    <select id="quiz-selector"></select>
-    <button onclick="startQuiz()" class="start-btn">Start Quiz</button>
+    <div class="quiz-container">
+        <h2>Quiz Selector</h2>
+        <select id="quiz-selector">
+            <option value="" disabled selected>Select a quiz</option>
+        </select>
+        <button onclick="startQuiz()">Start Quiz</button>
     
-    <div id="quiz-content" style="display: none;">
-        <h2>Quiz</h2>
-        <div id="question-container"></div>
-        <input type="text" id="answer" class="answer-input" placeholder="Type your answer here...">
-        <button onclick="submitAnswer()" class="submit-btn">Submit</button>
-        <div id="score" class="score"></div>
+        <h2>Quiz</h2>     
+        <div id="quiz-content" style="display: none;">
+            <div id="question-container"></div>
+            <input type="text" id="answer" placeholder="Your answer">
+            <button onclick="submitAnswer()">Submit Answer</button>
+            <div id="feedback"></div>
+        </div>
+    
+        <div id="score"></div>
     </div>
-</div>
-
 </body>
 </html>
