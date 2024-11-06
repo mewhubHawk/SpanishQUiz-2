@@ -20,6 +20,38 @@ def save_high_scores(scores):
     with open(HIGH_SCORE_FILE, "w") as file:
         json.dump(scores, file)
 
+@app.route("/save_responses/<quiz_name>", methods=["POST"])
+def save_responses(quiz_name):
+    responses = request.json.get("responses", [])
+    filename = f"data/{quiz_name}_responses.json"
+
+    if os.path.exists(filename):
+        with open(filename, "r") as file:
+            existing_data = json.load(file)
+    else:
+        existing_data = []
+
+    existing_data.extend(responses)
+
+    with open(filename, "w") as file:
+        json.dump(existing_data, file, indent=4)
+
+    return jsonify({"message": "Responses saved successfully!"})
+
+@app.route("/load_incorrect_questions/<quiz_name>")
+def load_incorrect_questions(quiz_name):
+    filename = f"data/{quiz_name}_responses.json"
+    
+    if os.path.exists(filename):
+        with open(filename, "r") as file:
+            responses = json.load(file)
+    else:
+        return jsonify({"incorrect_questions": []})
+
+    incorrect_questions = [resp for resp in responses if not resp["correct"]]
+
+    return jsonify({"incorrect_questions": incorrect_questions})
+
 @app.route("/")
 def home():
     """Serve the main HTML page."""
@@ -49,15 +81,11 @@ def get_high_score(quiz_name):
     score = high_scores.get(quiz_name, 0)
     return jsonify({"high_score": score})
 
-@app.route("/update_high_score/<quiz_name>", methods=["POST"])
-def update_high_score(quiz_name):
+@app.route("/update_high_scores/<quiz_name>", methods=["POST"])
+def update_high_scores(quiz_name, new_score):
     """Update the high score if the new score is higher."""
-    # Ensure request.json is not None before accessing `.get("score")`
-    if request.json is None:
-        return jsonify({"error": "No JSON data received"}), 400
-
-    new_score = request.json.get("score", 0)  # Default to 0 if no score is provided
-    high_scores = load_high_scores()
+    
+    high_scores = load_high_scores();
 
     # Update the high score only if the new score is greater
     if new_score > high_scores.get(quiz_name, 0):
