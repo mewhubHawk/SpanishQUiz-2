@@ -64,14 +64,13 @@ function submitAnswer() {
     const correctAnswer = currentQuizData[questions[currentQuestionIndex]].replace(/^"(.*)"$/, '$1');
 
     if (answer.toLowerCase() === correctAnswer.toLowerCase()) {
-        score += 1;
-        document.getElementById("feedback").innerText = "Correct!";
-        console.log("correct", score);
+        score += 1;       
+        document.getElementById("feedback").innerText = `Correct! ${score} right out of ${questions.length}`;
     } else {
-        document.getElementById("feedback").innerText = "Incorrect. The correct answer is: ${correctAnswer}";
+        document.getElementById("feedback").innerText = `Incorrect. The correct answer is: ${correctAnswer}`;
     }
     currentQuestionIndex += 1;
-    displayQuestion();
+    setTimeout(() => { displayQuestion(); }, 5000);
 };
 
 // Function to update the high score if the current score is higher
