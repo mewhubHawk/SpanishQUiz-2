@@ -1,7 +1,16 @@
 {
   "What is the chemical symbol for gold?": "Au",
   "What planet is closest to the Sun?": "Mercury",
-  "What are the elements of group 1 of the periodic table called?": "Earth Metals",
-  "What are the elements of group 8 of the periodic table called": "Noble Gases"
-  
+  "What are the elements of group 1 of the periodic table called?": "Alkali Metals",
+  "What are the elements of group 8 of the periodic table called": "Noble Gases",
+  "What is produced when lithium reacts with chlorine?": "lithium chloride",
+  "What moving particle is responsible for a metal conducting electricity?": "electron",
+  "What colourless gas is identified by holding a burning splint held near the top of a test tube containing it?": "hydrogen",
+  "Which gas causes acid rain and respiratory problems in humans?": "sulphur dioxide",
+  "Is a sports injury pack an example of an endothermic or exothemic reaction?": "endothermic",
+  "Is a hand warmer an example of an endothermic or exothemic reaction?": "exothermic",
+  "What is calculated by adding up the relative atomic masses of the atoms in a chemical formula?": "Relative formula mass",
+  "Which part of a reaction will be the fastest - start, middle or end?": "start",
+  "What term describes an analysis of environmental impact of a product during its manufacture, use and disposal?": "Life cycle assessment"
+
 }
