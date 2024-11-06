@@ -8,7 +8,7 @@ window.onload = async function() {
     const response = await fetch("/get_quizzes");
     const quizzes = await response.json();
     const quizSelector = document.getElementById("quiz-selector");
-    
+
     quizzes.forEach(quiz => {
         let option = document.createElement("option");
         option.value = quiz;
@@ -61,13 +61,14 @@ function displayQuestion() {
 function submitAnswer() {
     const answer = document.getElementById("answer").value.trim();
     const questions = Object.keys(currentQuizData);
-    const correctAnswer = currentQuizData[questions[currentQuestionIndex]];
+    const correctAnswer = currentQuizData[questions[currentQuestionIndex]].replace(/^"(.*)"$/, '$1');
 
     if (answer.toLowerCase() === correctAnswer.toLowerCase()) {
         score += 1;
         document.getElementById("feedback").innerText = "Correct!";
+        console.log("correct", score);
     } else {
-        document.getElementById("feedback").innerText = `Incorrect. The correct answer is: ${correctAnswer}`;
+        document.getElementById("feedback").innerText = "Incorrect. The correct answer is: ${correctAnswer}";
     }
     currentQuestionIndex += 1;
     displayQuestion();
