@@ -84,7 +84,7 @@ function submitAnswer() {
 
     currentQuestionIndex += 1;
     setTimeout(() => { displayQuestion(); }, 3000);
-}
+};
 
 // Function to submit the quiz results after completion
 async function submitQuizResults() {
@@ -98,7 +98,7 @@ async function submitQuizResults() {
     });
     document.getElementById("feedback").innerText = `Your responses have been saved!`;
     responses = [];
-}
+};
 
 // Function to update the high score if the current score is higher
 async function updateHighScores() {
@@ -135,4 +135,4 @@ async function loadIncorrectQuestions() {
     }
 
     setTimeout(() => { displayQuestion(); }, 5000);
-}
+};
