@@ -1,6 +1,7 @@
-from flask import Flask, render_template, jsonify
 import os
 import json
+from flask import Flask, render_template
+from flask import request, jsonify
 
 app = Flask(__name__)
 
@@ -19,38 +20,6 @@ def save_high_scores(scores):
     """Save high scores to the JSON file."""
     with open(HIGH_SCORE_FILE, "w") as file:
         json.dump(scores, file)
-
-@app.route("/save_responses/<quiz_name>", methods=["POST"])
-def save_responses(quiz_name):
-    responses = request.json.get("responses", [])
-    filename = f"data/{quiz_name}_responses.json"
-
-    if os.path.exists(filename):
-        with open(filename, "r") as file:
-            existing_data = json.load(file)
-    else:
-        existing_data = []
-
-    existing_data.extend(responses)
-
-    with open(filename, "w") as file:
-        json.dump(existing_data, file, indent=4)
-
-    return jsonify({"message": "Responses saved successfully!"})
-
-@app.route("/load_incorrect_questions/<quiz_name>")
-def load_incorrect_questions(quiz_name):
-    filename = f"data/{quiz_name}_responses.json"
-    
-    if os.path.exists(filename):
-        with open(filename, "r") as file:
-            responses = json.load(file)
-    else:
-        return jsonify({"incorrect_questions": []})
-
-    incorrect_questions = [resp for resp in responses if not resp["correct"]]
-
-    return jsonify({"incorrect_questions": incorrect_questions})
 
 @app.route("/")
 def home():
@@ -82,18 +51,49 @@ def get_high_score(quiz_name):
     return jsonify({"high_score": score})
 
 @app.route("/update_high_scores/<quiz_name>", methods=["POST"])
-def update_high_scores(quiz_name, new_score):
+def update_high_scores(quiz_name):
     """Update the high score if the new score is higher."""
-    
     high_scores = load_high_scores();
+    high_score = int(high_scores.get(quiz_name, 0))
+    score = request.json.get("score", 0)
 
-    # Update the high score only if the new score is greater
-    if new_score > high_scores.get(quiz_name, 0):
-        high_scores[quiz_name] = new_score
+    if score > high_score:
+        high_scores[quiz_name] = score
         save_high_scores(high_scores)
-        return jsonify({"message": "High score updated!", "high_score": new_score})
+        return jsonify({"message": "High score updated!", "high_score": score})
     else:
         return jsonify({"message": "No update needed", "high_score": high_scores[quiz_name]})
+
+@app.route("/save_responses/<quiz_name>", methods=["POST"])
+def save_responses(quiz_name):
+    responses = request.json.get("responses", [])
+    filename = f"data/{quiz_name}_responses.json"
+    existing_data = []
+
+    if os.path.exists(filename):
+        with open(filename, "r") as file:
+            existing_data = json.load(file)
+        file.close()
+
+    existing_data.append(responses)
+    with open(filename, "w") as file:
+        json.dump(existing_data, file, indent=4)
+
+    return jsonify({"message": "Responses saved successfully!"})
+
+@app.route("/load_incorrect_questions/<quiz_name>")
+def load_incorrect_questions(quiz_name):
+    filename = f"data/{quiz_name}_responses.json"
+    
+    if os.path.exists(filename):
+        with open(filename, "r") as file:
+            responses = json.load(file)
+    else:
+        return jsonify({"incorrect_questions": []})
+
+    incorrect_questions = [resp for resp in responses if not resp["correct"]]
+
+    return jsonify({"incorrect_questions": incorrect_questions})
 
 if __name__ == "__main__":
     app.run(debug=True)
