@@ -55,6 +55,7 @@ function displayQuestion() {
     } else {
         document.getElementById("question-container").innerText = `Your final score is ${score}/${questions.length}`;
         updateHighScores();
+        submitQuizResults();
     }
 };
 
@@ -73,7 +74,6 @@ function submitAnswer() {
         document.getElementById("feedback").innerText = `Incorrect. The correct answer is: ${correctAnswer}`;
     }
 
-    // Track the question, student's answer, and correctness
     responses.push({
         question: question,
         student_answer: answer,
@@ -89,8 +89,6 @@ function submitAnswer() {
 // Function to submit the quiz results after completion
 async function submitQuizResults() {
     const quizName = document.getElementById("quiz-selector").value;
-
-    // Send responses to the server for saving
     await fetch(`/save_responses/${quizName}`, {
         method: "POST",
         headers: {
@@ -98,15 +96,13 @@ async function submitQuizResults() {
         },
         body: JSON.stringify({ responses: responses })
     });
-
-    alert("Your responses have been saved!");
-    responses = []; // Reset responses for a new quiz
+    document.getElementById("feedback").innerText = `Your responses have been saved!`;
+    responses = [];
 }
 
 // Function to update the high score if the current score is higher
 async function updateHighScores() {
     const quizName = document.getElementById("quiz-selector").value;
-
     if (score > highScore) {
         const response = await fetch(`/update_high_scores/${quizName}`, {
             method: "POST",
@@ -115,14 +111,10 @@ async function updateHighScores() {
             },
             body: JSON.stringify({ score: score })
         });
-
-        console.log(score);
-        // const data = await response.json();
-        // document.getElementById("score").innerText = `High Score: ${data.high_score}`;
-        document.getElementById("score").innerText = `High Score: ${score}`;
-        // alert(data.message);
+        const data = await response.json();
+        document.getElementById("score").innerText = `You made a new high score: ${data.high_score}`;
     } else {
-        document.getElementById("score").innerText = `Final Score: ${score}. Try again to beat the high score of ${highScore}!`;
+        document.getElementById("score").innerText = `You scored: ${score}. Try again to beat the high score of ${highScore}!`;
     }
 };
 
@@ -132,7 +124,6 @@ async function loadIncorrectQuestions() {
     const response = await fetch(`/load_incorrect_questions/${quizName}`);
     const data = await response.json();
 
-    // If there are incorrect questions, use those
     if (data.incorrect_questions.length > 0) {
         currentQuizData = data.incorrect_questions.reduce((obj, item) => {
             obj[item.question] = item.correct_answer;
@@ -140,7 +131,7 @@ async function loadIncorrectQuestions() {
         }, {});
     } else {
         alert("No previously incorrect questions to retry.");
-        startQuiz();  // Start with a full quiz if no incorrect questions
+        startQuiz(); 
     }
 
     setTimeout(() => { displayQuestion(); }, 5000);
